@@ -1,0 +1,162 @@
+---
+import { JsonProducts } from "../../data/JsonProducts.js";
+
+
+---
+<section class="max-w-screen-2xl w-full mt-[50px] p-[20px]">
+    <h3 class="text-center font-bold text-[40px] mb-[30px]">Our Products</h3>
+    <div class="parent">
+
+
+
+        {JsonProducts.map((JsonProduct) => 
+            <div class={JsonProduct.clase + " relative"}>
+                <div class={JsonProduct.claseImagen + " image_container w-full h-[300px] bg-slate-200"}></div>
+                <div class="p-[20px] flex flex-col gap-2">
+                    <span class="text-[25px] font-semibold">{JsonProduct.nombreProducto}</span>
+                    <span>{JsonProduct.descripcion}</span>
+                    <span class="font-bold text-[18px]">Rp {JsonProduct.precio}<span class="ml-[10px] text-[14px] font-semibold text-black/30 line-through">Rp {JsonProduct.descuento}</span></span>
+                </div>
+                <div class="hover_menu flex justify-center items-center flex-col gap-3">
+                    <button class="bg-white px-[20px] py-[10px]">Add to card</button>
+                    <div class="flex justify-center items-center gap-5">
+                        <span class="flex justify-center items-center gap-2 text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+                                <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5"/>
+                            </svg>Share
+                        </span>
+                        <span class="flex justify-center items-center gap-2 text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                            </svg>Like
+                        </span>
+                    </div>
+                </div>
+            </div>
+        )}        
+    </div> 
+    <div class="w-full flex justify-center items-center pt-[70px]">
+        <button class="border border-1 border-[#E89F72] text-[#E89F72] px-[70px] py-[10px]">Show More</button>   
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<style>
+    .lapv1 {
+        background-image: url(https://www.knoll.com/nkdc/images/inline/knoll-shop-and-browse_new.jpg);
+    }
+    .lapv2 {
+        background-image: url(https://decohunter.com/wp-content/uploads/2020/05/estilos-escritorios-modernos-industrial.jpg);
+    }
+    .lapv3 {
+        background-image: url(https://madesa.mx/cdn/shop/articles/Foto_Capa.jpg?v=1716894736&width=1080);
+    }
+    .lapv4 {
+        background-image: url(https://i0.wp.com/bika.com.co/wp-content/uploads/2023/12/ALCOBA-LOREN-2-1.png?fit=800%2C800&ssl=1);
+    }
+    .lapv5 {
+        background-image: url(https://lasilleria.cl/wp-content/uploads/2024/01/velador-nordico-minimal-mesa-lateral-de-disen%CC%83o-dos-cajones_.jpg);
+    }
+    .lapv6 {
+        background-image: url(https://http2.mlstatic.com/D_NQ_NP_706698-MCO73885369856_012024-O.webp);
+    }
+    .lapv7 {
+        background-image: url(https://m.media-amazon.com/images/I/6185T7aUOmL._AC_SL1500_.jpg);
+    }
+    .lapv8 {
+        background-image: url(https://i.pinimg.com/736x/37/37/bd/3737bd8eb5ef302560d4de7ab0683908.jpg);
+    }
+
+
+
+    .image_container {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+.parent {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 60px;
+}
+.div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8 {
+    background-color: #f0f0f0;
+}
+
+
+    
+.div1 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+}
+
+.div2 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 3;
+}
+
+.div3 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 5;
+}
+
+.div4 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 7;
+}
+
+.div5 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-row-start: 4;
+}
+
+.div6 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 3;
+    grid-row-start: 4;
+}
+
+.div7 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 5;
+    grid-row-start: 4;
+}
+
+.div8 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 7;
+    grid-row-start: 4;
+}
+        
+
+
+
+.div1:hover .hover_menu , .div2:hover .hover_menu, .div3:hover .hover_menu, .div4:hover .hover_menu, .div5:hover .hover_menu, .div6:hover .hover_menu, .div7:hover .hover_menu, .div8:hover .hover_menu {
+    display: flex;
+}
+
+    .hover_menu {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.355);
+        top: 0;
+        color: #E89F72;
+    }
+</style>
