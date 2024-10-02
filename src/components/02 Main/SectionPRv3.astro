@@ -9,13 +9,25 @@ import { JsonProducts } from "../../data/JsonProducts.js";
 
 
 
-        {JsonProducts.map((JsonProduct) => 
-            <div class={JsonProduct.clase + " relative"}>
-                <div class={JsonProduct.claseImagen + " image_container w-full h-[300px] bg-slate-200"}></div>
+        {JsonProducts.map((JsonProduct, index) => 
+            <div class={`relative div${index + 1}`}>
+                <div class="image_container w-full h-[300px] bg-slate-200 relative">
+                    <img src={JsonProduct.detailsProducto.image} alt={JsonProduct.detailsProducto.nombreProducto} class="absolute object-cover h-full w-full" />                    
+                    {JsonProduct.detalles === 'true' && JsonProduct.detalles_number === '1' && (
+                        <div class="absolute right-5 top-5 w-[50px] h-[50px] rounded-full bg-[#E97172] flex justify-center items-center text-white text-[14px]">{JsonProduct.descuentoProducto.cantidad_descuento}</div>
+                    )}
+                    {JsonProduct.detalles === 'true' && JsonProduct.detalles_number === '0' && (
+                        <div class="absolute right-5 top-5 w-[50px] h-[50px] rounded-full bg-[#2EC2AC] flex justify-center items-center text-white text-[14px]">{JsonProduct.detailsProducto.new_product}</div>
+                    )}
+                </div>
                 <div class="p-[20px] flex flex-col gap-2">
-                    <span class="text-[25px] font-semibold">{JsonProduct.nombreProducto}</span>
-                    <span>{JsonProduct.descripcion}</span>
-                    <span class="font-bold text-[18px]">Rp {JsonProduct.precio}<span class="ml-[10px] text-[14px] font-semibold text-black/30 line-through">Rp {JsonProduct.descuento}</span></span>
+                    <span class="text-[25px] font-semibold">{JsonProduct.detailsProducto.nombreProducto}</span>
+                    <span>{JsonProduct.detailsProducto.descripcion}</span>
+                    <span class="font-bold text-[18px]">Rp {JsonProduct.detailsProducto.precio}
+                        {JsonProduct.descuentoProducto.aplica == '1' && (
+                            <span class="ml-[10px] text-[14px] font-semibold text-black/30 line-through">Rp {JsonProduct.descuentoProducto.original_precio}</span>
+                        )}
+                    </span>                    
                 </div>
                 <div class="hover_menu flex justify-center items-center flex-col gap-3">
                     <button class="bg-white px-[20px] py-[10px]">Add to card</button>
@@ -42,113 +54,73 @@ import { JsonProducts } from "../../data/JsonProducts.js";
 
 
 
-
-
-
-
-
-<style>
-    .lapv1 {
-        background-image: url(https://www.knoll.com/nkdc/images/inline/knoll-shop-and-browse_new.jpg);
+<style>    
+    .parent {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        gap: 60px;
     }
-    .lapv2 {
-        background-image: url(https://decohunter.com/wp-content/uploads/2020/05/estilos-escritorios-modernos-industrial.jpg);
+    .div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8 {
+        background-color: #f0f0f0;
     }
-    .lapv3 {
-        background-image: url(https://madesa.mx/cdn/shop/articles/Foto_Capa.jpg?v=1716894736&width=1080);
-    }
-    .lapv4 {
-        background-image: url(https://i0.wp.com/bika.com.co/wp-content/uploads/2023/12/ALCOBA-LOREN-2-1.png?fit=800%2C800&ssl=1);
-    }
-    .lapv5 {
-        background-image: url(https://lasilleria.cl/wp-content/uploads/2024/01/velador-nordico-minimal-mesa-lateral-de-disen%CC%83o-dos-cajones_.jpg);
-    }
-    .lapv6 {
-        background-image: url(https://http2.mlstatic.com/D_NQ_NP_706698-MCO73885369856_012024-O.webp);
-    }
-    .lapv7 {
-        background-image: url(https://m.media-amazon.com/images/I/6185T7aUOmL._AC_SL1500_.jpg);
-    }
-    .lapv8 {
-        background-image: url(https://i.pinimg.com/736x/37/37/bd/3737bd8eb5ef302560d4de7ab0683908.jpg);
-    }
-
-
-
-    .image_container {
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    
-.parent {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    gap: 60px;
-}
-.div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8 {
-    background-color: #f0f0f0;
-}
-
-
-    
-.div1 {
-    grid-column: span 2 / span 2;
-    grid-row: span 3 / span 3;
-}
-
-.div2 {
-    grid-column: span 2 / span 2;
-    grid-row: span 3 / span 3;
-    grid-column-start: 3;
-}
-
-.div3 {
-    grid-column: span 2 / span 2;
-    grid-row: span 3 / span 3;
-    grid-column-start: 5;
-}
-
-.div4 {
-    grid-column: span 2 / span 2;
-    grid-row: span 3 / span 3;
-    grid-column-start: 7;
-}
-
-.div5 {
-    grid-column: span 2 / span 2;
-    grid-row: span 3 / span 3;
-    grid-row-start: 4;
-}
-
-.div6 {
-    grid-column: span 2 / span 2;
-    grid-row: span 3 / span 3;
-    grid-column-start: 3;
-    grid-row-start: 4;
-}
-
-.div7 {
-    grid-column: span 2 / span 2;
-    grid-row: span 3 / span 3;
-    grid-column-start: 5;
-    grid-row-start: 4;
-}
-
-.div8 {
-    grid-column: span 2 / span 2;
-    grid-row: span 3 / span 3;
-    grid-column-start: 7;
-    grid-row-start: 4;
-}
         
+    .div1 {
+        grid-column: span 2 / span 2;
+        grid-row: span 3 / span 3;
+    }
+
+    .div2 {
+        grid-column: span 2 / span 2;
+        grid-row: span 3 / span 3;
+        grid-column-start: 3;
+    }
+
+    .div3 {
+        grid-column: span 2 / span 2;
+        grid-row: span 3 / span 3;
+        grid-column-start: 5;
+    }
+
+    .div4 {
+        grid-column: span 2 / span 2;
+        grid-row: span 3 / span 3;
+        grid-column-start: 7;
+    }
+
+    .div5 {
+        grid-column: span 2 / span 2;
+        grid-row: span 3 / span 3;
+        grid-row-start: 4;
+    }
+
+    .div6 {
+        grid-column: span 2 / span 2;
+        grid-row: span 3 / span 3;
+        grid-column-start: 3;
+        grid-row-start: 4;
+    }
+
+    .div7 {
+        grid-column: span 2 / span 2;
+        grid-row: span 3 / span 3;
+        grid-column-start: 5;
+        grid-row-start: 4;
+    }
+
+    .div8 {
+        grid-column: span 2 / span 2;
+        grid-row: span 3 / span 3;
+        grid-column-start: 7;
+        grid-row-start: 4;
+    }
+            
 
 
 
-.div1:hover .hover_menu , .div2:hover .hover_menu, .div3:hover .hover_menu, .div4:hover .hover_menu, .div5:hover .hover_menu, .div6:hover .hover_menu, .div7:hover .hover_menu, .div8:hover .hover_menu {
-    display: flex;
-}
+    .div1:hover .hover_menu , .div2:hover .hover_menu, .div3:hover .hover_menu, .div4:hover .hover_menu, .div5:hover .hover_menu, .div6:hover .hover_menu, .div7:hover .hover_menu, .div8:hover .hover_menu {
+        display: flex;
+    }
 
     .hover_menu {
         display: none;
