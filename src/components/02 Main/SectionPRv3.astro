@@ -5,9 +5,7 @@ import { JsonProducts } from "../../data/JsonProducts.js";
 ---
 <section class="max-w-screen-2xl w-full mt-[50px] p-[20px]">
     <h3 class="text-center font-bold text-[40px] mb-[30px]">Our Products</h3>
-    <div class="parent">
-
-
+    <div class="parent grid gap-5 xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1">
 
         {JsonProducts.map((JsonProduct, index) => 
             <div class={`relative div${index + 1}`}>
@@ -45,7 +43,8 @@ import { JsonProducts } from "../../data/JsonProducts.js";
                     </div>
                 </div>
             </div>
-        )}        
+        )}     
+
     </div> 
     <div class="w-full flex justify-center items-center pt-[70px]">
         <button class="border border-1 border-[#E89F72] text-[#E89F72] px-[70px] py-[10px]">Show More</button>   
@@ -55,66 +54,11 @@ import { JsonProducts } from "../../data/JsonProducts.js";
 
 
 <style>    
-    .parent {
-        display: grid;
-        grid-template-columns: repeat(8, 1fr);
-        grid-template-rows: repeat(6, 1fr);
-        gap: 60px;
-    }
     .div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8 {
         background-color: #f0f0f0;
     }
         
-    .div1 {
-        grid-column: span 2 / span 2;
-        grid-row: span 3 / span 3;
-    }
-
-    .div2 {
-        grid-column: span 2 / span 2;
-        grid-row: span 3 / span 3;
-        grid-column-start: 3;
-    }
-
-    .div3 {
-        grid-column: span 2 / span 2;
-        grid-row: span 3 / span 3;
-        grid-column-start: 5;
-    }
-
-    .div4 {
-        grid-column: span 2 / span 2;
-        grid-row: span 3 / span 3;
-        grid-column-start: 7;
-    }
-
-    .div5 {
-        grid-column: span 2 / span 2;
-        grid-row: span 3 / span 3;
-        grid-row-start: 4;
-    }
-
-    .div6 {
-        grid-column: span 2 / span 2;
-        grid-row: span 3 / span 3;
-        grid-column-start: 3;
-        grid-row-start: 4;
-    }
-
-    .div7 {
-        grid-column: span 2 / span 2;
-        grid-row: span 3 / span 3;
-        grid-column-start: 5;
-        grid-row-start: 4;
-    }
-
-    .div8 {
-        grid-column: span 2 / span 2;
-        grid-row: span 3 / span 3;
-        grid-column-start: 7;
-        grid-row-start: 4;
-    }
-            
+  
 
 
 

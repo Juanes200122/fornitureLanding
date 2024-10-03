@@ -1,9 +1,9 @@
-<section class="max-w-screen-2xl w-full mt-[190px] pl-5">
+<section class="max-w-screen-2xl w-full mt-[190px] pl-5 p-[20px]">
     <div class="text-center my-[20px]">
         <p>Share your setup with</p>
         <h3 class="text-[40px] font-bold">#FuniroFurniture</h3>
     </div>
-    <div class="flex justify-between items-center gap-5">
+    <div class="lg:flex justify-between items-center gap-5 grid grid-cols-1">
         <div class="w-[100%] flex flex-col gap-5">
             <div class="flex justify-center items-end gap-5">
                 <figure class="w-[70%] h-[350px] relative flex justify-center items-center overflow-hidden">
@@ -22,7 +22,7 @@
                 </figure>
             </div>
         </div>
-        <figure class="w-[450px] h-[400px] relative flex justify-center items-center overflow-hidden">
+        <figure class="w-[450px] h-[400px] relative flex justify-center items-center overflow-hidden element_bloque">
             <img src="https://hips.hearstapps.com/hmg-prod/images/piso-moderno-con-mobiliario-a-medida12-jpg-6485e69500ffa.jpg?resize=980:*" alt="" class="absolute w-full h-full object-cover">
         </figure>
         <div class="w-[100%] flex flex-col gap-5">
@@ -43,7 +43,6 @@
                 </figure>
             </div>
         </div>
-        <div>
     </div>
 </section>
 
@@ -53,5 +52,12 @@
     }
     figure:hover {
         width: 100%;
+    }
+
+
+    @media (max-width: 1030px) {
+        .element_bloque {
+            width: calc(100%);
+        }
     }
 </style>

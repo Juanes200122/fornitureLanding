@@ -1,7 +1,7 @@
-<footer class="max-w-screen-2xl w-full flex justify-between items-start border-t-2 border-t-black/10 p-20 mt-[190px] flex-wrap gap-10">
+<footer class="bloque_element_footer max-w-screen-2xl w-full gap-10 grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 border-t-2 border-t-black/10 p-20 mt-[190px]">
     <div class="flex flex-col gap-3 text-black/50">
         <h3 class="text-[25px] font-bold text-black/80">Funiro</h3>
-        <p class="w-[400px] ">Worldwide furniture store since 202. We sell over 1000+ branded products on our website</p>
+        <p class="parra_bloque">Worldwide furniture store since 202. We sell over 1000+ branded products on our website</p>
         <span class="flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
                 <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
@@ -36,24 +36,7 @@
                 <a href="">Team & Policy</a>
             </li>
         </ul>
-    </div>
-    <div  class="flex flex-col gap-3 text-black/50">
-        <h3 class="text-[25px] font-bold text-black/80">Account</h3>
-        <ul class="flex flex-col gap-3">
-            <li>
-                <a href="">My Account</a>
-            </li>
-            <li>
-                <a href="">Checkout</a>
-            </li>
-            <li>
-                <a href="">My Cart</a>
-            </li>
-            <li>
-                <a href="">My catalog</a>
-            </li>
-        </ul>
-    </div>
+    </div>  
     <div  class="flex flex-col gap-3 text-black/50">
         <h3 class="text-[25px] font-bold text-black/80">Stay Connected</h3>
         <ul class="flex flex-col gap-3">
@@ -70,7 +53,7 @@
     </div>
     <div class="flex flex-col gap-3">
         <h3 class="text-[25px] font-bold">Stay Updated</h3>
-        <div class="flex flex-row-reverse justify-center items-center">
+        <div class="flex flex-row-reverse justify-end items-center">
             <label for="email_send" class="w-[40px] h-[40px] bg-[#E79E71] flex justify-center items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-send-fill" viewBox="0 0 16 16">
                     <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471z"/>
@@ -80,3 +63,15 @@
         </div>
     </div>
 </footer>
+
+
+<style>
+        @media (max-width: 1030px) {
+        .bloque_element_footer {                        
+            padding: 80px 20px;
+        }
+        .parra_bloque {
+            width: 100%;
+        }
+    }
+</style>
